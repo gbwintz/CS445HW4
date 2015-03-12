@@ -7,9 +7,6 @@
     Rating:
     = @movie.rating
   %li
-    Director:
-    = @movie.director
-  %li
     Released on:
     = @movie.release_date.strftime("%B %d, %Y")
 
