@@ -28,9 +28,12 @@ module NavigationHelpers
    when /^the details page for "(.*)"/
       mov = Movie.find_by_title($1)
       movie_path(mov)
-      when /^when on director page "(.*)"/
-        m = Movie.find_by_title($1)
-        same_director_path m 
+   when /^when on director page "(.*)"/
+      m = Movie.find_by_title($1)
+      same_director_path m 
+   when /^the Similar Movies page for "(.*)"/
+      id = Movie.find_by_title($1).id.to_s
+      "/movies/#{id}/same_director"
        
     else
       begin
